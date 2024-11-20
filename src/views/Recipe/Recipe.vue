@@ -36,7 +36,7 @@
     <div></div>
   </div>
 <div v-if="singleFood">
- <div v-for="food in foodSearch" :key="food " class="mt-20 ml-7">
+ <div v-for="food in foodSearch" :key="food " class="mt-20 ml-4">
                 <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
                 <button class="bg-green-200 py-1 px-3 rounded-md ml-28 mt-3 font-bold"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
