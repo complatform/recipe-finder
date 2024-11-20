@@ -28,7 +28,7 @@
         </div>
 </div>
   <div class="mt-20">
-    <img :src="image" alt="" class="w-80 ml-7 mt-3 rounded-sm">
+    <img :src="image" alt="" class="w-80 ml-9 mt-3 rounded-sm">
     <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{name}}</h1>
     <h1 class="ml-3 text-blue-400 text-xl underline font-serif">Ingredients</h1>
     <div class="ml-10 mt-2 font-serif">
