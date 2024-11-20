@@ -36,7 +36,7 @@
     <div></div>
   </div>
 <div v-if="singleFood">
- <div v-for="food in foodSearch" :key="food " class="mt-20">
+ <div v-for="food in foodSearch" :key="food " class="mt-20 ml-7">
                 <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
                 <button class="bg-green-200 py-1 px-3 rounded-md ml-28 mt-3 font-bold"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
@@ -161,9 +161,9 @@
     </div>
     <div class="mt-16">
         <h1 class="text-center font-serif font-bold text-lg">Search The Foods Here and press the search Icon</h1>
-                <input type="text" placeholder="Enter food name"   class="shadow-md px-7  focus:outline-blue-300 py-3 rounded-md w-80 ml-2 border-blue-400 border-2" v-model="foodName">
+                <input type="text" placeholder="Enter food name"   class="shadow-md px-7  focus:outline-blue-300 py-3 rounded-md w-80 ml-5 border-blue-400 border-2" v-model="foodName">
         <!-- <i class="fa-solid fa-magnifying-glass text-3xl mt-10  text-blue-600 ml-2" @click="toggleSearch" v-if="!searchYourFood"></i> -->
-        <i class="fa-solid fa-magnifying-glass text-3xl mt-10 text-blue-600 ml-2"  @click="toggleSingleFood"></i>
+        <i class="fa-solid fa-magnifying-glass text-2xl mt-10 text-blue-600 ml-2"  @click="toggleSingleFood"></i>
     </div>
     <div class="mt-16">
         <h1  class="text-center font-serif font-bold text-xl text-blue-300 mb-5">About The Recipes</h1>
