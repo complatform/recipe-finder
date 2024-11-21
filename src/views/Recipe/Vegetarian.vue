@@ -1,5 +1,5 @@
 <template>
- <div class="flex  ml-5 justify-between mr-5 pb-5 pt-3 pl-7 pr-10 fixed bg-white w-full">
+ <div class="flex   justify-between mr-5 pb-5 pt-3 pl-7 pr-10 fixed bg-white w-full">
 
         <i class="fa-solid fa-bars text-3xl" @click="toggleList"></i>
         <h1 class="font-bold text-gray-600 text-3xl" v-if="!searchYourFood">food <span class="font-bold text-green-600">Mood</span></h1>
@@ -27,7 +27,7 @@
 <a href="/Contactus">Contact</a>
         </div>
 </div>
-    <div class=" justify-between ml-3 mr-7 mt-7 md:ml-16 md:mt-20">
+    <div class=" justify-between ml-3 mr-7 mt-20 md:ml-16 md:mt-20">
             <div v-for="food in foods11" :key="food">
                 <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md md:ml-60">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 md:mb-10">{{food.strMeal}}</h1>
