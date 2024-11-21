@@ -27,10 +27,10 @@
 <a href="/Contactus">Contact</a>
         </div>
 </div>
-    <div class=" justify-between ml-3 mr-7 mt-20 md:ml-16 md:mt-20">
+    <div class=" justify-between ml-3 mr-7 mt-20 md:ml-16 md:mt-20 lg:ml-72">
             <div v-for="food in foods11" :key="food">
-                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md md:ml-60">
-                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 md:mb-10">{{food.strMeal}}</h1>
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 lg:h-60 md:h-60 rounded-md md:ml-60">
+                <h1 class="text-center lg:text-left lg:ml-64 mt-3 text-2xl font-serif text-green-300 md:mb-10">{{food.strMeal}}</h1>
                 
                 </div>
           

@@ -29,10 +29,10 @@
 </div>
       
 <div v-if="singleFood">
- <div v-for="food in foodSearch" :key="food " class="mt-20 ml-4 md:ml-60 md:bg-white md:rounded-md md:shadow-md md:mr-60 md:w-1/2 pb-5">
-                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md  md:h-64 md:w-full">
+ <div v-for="food in foodSearch" :key="food " class="mt-20 lg:mt-24 md:mt-24 ml-4 md:ml-60 md:bg-white md:rounded-md md:shadow-md md:mr-60 md:w-1/2 pb-5 lg:ml-80">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md  md:h-64 md:w-full lg:h-96">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
-                <button class="bg-green-200 py-1 px-3 rounded-md ml-28 mt-3 font-bold md:ml-44"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
+                <button class="bg-green-200 py-1 px-3 rounded-md ml-28 mt-3 font-bold md:ml-44 lg:ml-72"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
                 <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
                 </div>
 </div>
@@ -180,14 +180,14 @@
 
     </div>
  </div>
- <div class="invisible md:visible lg:visible ml-5 mr-5" v-if="!singleFood">
+ <div class="invisible md:visible lg:visible ml-5 mr-5 " v-if="!singleFood">
     <div class="mt-36">
         <h1 class="text-3xl font-serif text-center text-green-400 ">Let's Start  Cooking <br> <span class="text-black">With  Popular Recipes</span> </h1>
         <p class="text-center mt-3 text-gray-400 font-mono">Want to learn to cook but confused to start? No Need to worry again!</p>
     </div>
- <div class="flex justify-between ml-3 mr-7 mt-10">
-            <div v-for="food in foods" :key="food" class="bg-white shadow-md pb-5 rounded-md">
-                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md">
+ <div class="flex justify-between ml-3 mr-7 mt-10  lg:ml-7">
+            <div v-for="food in foods" :key="food" class="bg-white shadow-md pb-5 rounded-md" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
                 <!-- <h2>{{food.idMeal}}</h2> -->
                 <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
@@ -195,22 +195,30 @@
                 <!-- <router-link :to="{ name: 'Details', params: { id_Meal: food.idMeal } }" class="bg-green-200 py-1 px-2 rounded-md ml-5 mt-3 font-bold" >Show Details</router-link > -->
                 </div>
                 
-            <div v-for="food in foods2" :key="food" class="mr-5 ml-5 bg-white shadow-md pb-5 rounded-md">
-                <img :src="food.strMealThumb" alt="no image" class="w-96  h-40 rounded-md">
+            <div v-for="food in foods2" :key="food" class="mr-5 ml-5 bg-white shadow-md pb-5 rounded-md" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">
+                <img :src="food.strMealThumb" alt="no image" class="w-96  h-60 rounded-md">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
                 <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
                
                 <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
             </div>
-               <div v-for="food in foods3" :key="food" class="bg-white shadow-md pb-5 rounded-md">
-                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md">
+               <div v-for="food in foods3" :key="food" class="bg-white shadow-md pb-5 rounded-md" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
            <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button> 
+                </div>
+                <div v-for="food in foods16" :key="food" class="bg-white shadow-md pb-5 rounded-md md:hidden lg:block ml-5">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
+                <!-- <h2>{{food.idMeal}}</h2> -->
+                <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
+                <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
+                <!-- <router-link :to="{ name: 'Details', params: { id_Meal: food.idMeal } }" class="bg-green-200 py-1 px-2 rounded-md ml-5 mt-3 font-bold" >Show Details</router-link > -->
                 </div>
         </div>
-         <div class="flex justify-between ml-3 mr-7 mt-10">
-            <div v-for="food in foods4" :key="food" class="bg-white shadow-md pb-5 rounded-md">
-                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md">
+         <div class="flex justify-between ml-3 mr-7 mt-10  lg:ml-7">
+            <div v-for="food in foods4" :key="food" class="bg-white shadow-md pb-5 rounded-md" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
                 <!-- <h2>{{food.idMeal}}</h2> -->
                 <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
@@ -218,22 +226,30 @@
                 <!-- <router-link :to="{ name: 'Details', params: { id_Meal: food.idMeal } }" class="bg-green-200 py-1 px-2 rounded-md ml-5 mt-3 font-bold" >Show Details</router-link > -->
                 </div>
                 
-            <div v-for="food in foods5" :key="food" class="mr-5 ml-5 bg-white shadow-md pb-5 rounded-md">
-                <img :src="food.strMealThumb" alt="no image" class="w-96  h-40 rounded-md">
+            <div v-for="food in foods5" :key="food" class="mr-5 ml-5 bg-white shadow-md pb-5 rounded-md" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">
+                <img :src="food.strMealThumb" alt="no image" class="w-96  h-60 rounded-md">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
                 <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
                
                 <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
             </div>
-               <div v-for="food in foods6" :key="food" class="bg-white shadow-md pb-5 rounded-md">
-                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md">
+               <div v-for="food in foods6" :key="food" class="bg-white shadow-md pb-5 rounded-md" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
            <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button> 
+                </div>
+                 <div v-for="food in foods17" :key="food" class="bg-white shadow-md pb-5 rounded-md md:hidden lg:block ml-5">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
+                <!-- <h2>{{food.idMeal}}</h2> -->
+                <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
+                <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
+                <!-- <router-link :to="{ name: 'Details', params: { id_Meal: food.idMeal } }" class="bg-green-200 py-1 px-2 rounded-md ml-5 mt-3 font-bold" >Show Details</router-link > -->
                 </div>
         </div>
-         <div class="flex justify-between ml-3 mr-7 mt-10">
-            <div v-for="food in foods7" :key="food" class="bg-white shadow-md pb-5 rounded-md">
-                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md">
+         <div class="flex justify-between ml-3 mr-7 mt-10  lg:ml-7">
+            <div v-for="food in foods7" :key="food" class="bg-white shadow-md pb-5 rounded-md" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
                 <!-- <h2>{{food.idMeal}}</h2> -->
                 <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
@@ -241,24 +257,32 @@
                 <!-- <router-link :to="{ name: 'Details', params: { id_Meal: food.idMeal } }" class="bg-green-200 py-1 px-2 rounded-md ml-5 mt-3 font-bold" >Show Details</router-link > -->
                 </div>
                 
-            <div v-for="food in foods8" :key="food" class="mr-5 ml-5 bg-white shadow-md pb-5 rounded-md">
-                <img :src="food.strMealThumb" alt="no image" class="w-96  h-40 rounded-md">
+            <div v-for="food in foods8" :key="food" class="mr-5 ml-5 bg-white shadow-md pb-5 rounded-md" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">
+                <img :src="food.strMealThumb" alt="no image" class="w-96  h-60 rounded-md">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
                 <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
                
                 <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
             </div>
-               <div v-for="food in foods9" :key="food" class="bg-white shadow-md pb-5 rounded-md">
-                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md">
+               <div v-for="food in foods9" :key="food" class="bg-white shadow-md pb-5 rounded-md " @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
            <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button> 
+                </div>
+                 <div v-for="food in foods18" :key="food" class="bg-white shadow-md pb-5 rounded-md   md:hidden lg:block ml-5" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
+                <!-- <h2>{{food.idMeal}}</h2> -->
+                <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
+                <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
+                <!-- <router-link :to="{ name: 'Details', params: { id_Meal: food.idMeal } }" class="bg-green-200 py-1 px-2 rounded-md ml-5 mt-3 font-bold" >Show Details</router-link > -->
                 </div>
         </div>
           <div class="mt-16">
 
     <h1 class="text-center font-serif font-bold text-2xl text-blue-300">Find Recipies  For</h1>
    
-          <div class="flex justify-between ml-3 mr-7 mt-7">
+          <div class="flex justify-between ml-3 mr-7 mt-7 lg:w-1/2 lg:ml-80">
             
                 <div @click="searchAnotherFood11('Seafood','Seafood')">
                 <img :src="strMealThumb" alt="no image" class=" w-80 h-80 rounded-full">
@@ -274,7 +298,7 @@
                 
     
         </div>
-         <div class="flex justify-between ml-3 mr-7 mt-7">
+         <div class="flex justify-between ml-3 mr-7 mt-7 lg:w-1/2 lg:ml-80">
             
                 <div @click="searchAnotherFood11('Chicken','Chicken')">
                 <img :src="strMealThumb3" alt="no image" class=" w-80 h-80 rounded-full">
@@ -295,9 +319,13 @@
     </div>
         <div class="mt-16">
         <h1 class="text-center font-serif font-bold text-xl">Search The Foods Here and press the search Icon</h1>
-                <input type="text" placeholder="Enter food name"   class="shadow-md px-7  focus:outline-blue-300 py-3 rounded-md w-96 ml-60 border-blue-400 border-2" v-model="foodName">
+        <div class="lg:ml-20">
+
+                <input type="text" placeholder="Enter food name"   class="shadow-md px-7  focus:outline-blue-300 py-3 rounded-md w-96 ml-60 border-blue-400 border-2 lg:ml-96" v-model="foodName">
+                        <i class="fa-solid fa-magnifying-glass text-2xl mt-10 text-blue-600 ml-2"  @click="toggleSingleFood"></i>
+        </div>
         <!-- <i class="fa-solid fa-magnifying-glass text-3xl mt-10  text-blue-600 ml-2" @click="toggleSearch" v-if="!searchYourFood"></i> -->
-        <i class="fa-solid fa-magnifying-glass text-2xl mt-10 text-blue-600 ml-2"  @click="toggleSingleFood"></i>
+
     </div>
     <div class="mt-16">
         <h1  class="text-center font-serif font-bold text-xl text-blue-300 mb-5">About The Recipes</h1>
@@ -348,6 +376,10 @@ return{
     food13:[],
     food14:[],
     food15:[],
+    foods16:[],
+    foods17:[],
+    foods18:[],
+    foods19:[],
     foodName:'',
     foodSearch:[],
     strMealThumb:'',
@@ -380,6 +412,10 @@ this.searchAnotherFood12()
  this.searchAnotherFood13()
  this.searchAnotherFood14()
  this.searchAnotherFood15()
+ this.searchAnotherFood16()
+ this.searchAnotherFood17()
+ this.searchAnotherFood18()
+ this.searchAnotherFood19()
 },
 methods:{
 
@@ -488,6 +524,34 @@ searchAnotherFood10(){
      axios.get('https://www.themealdb.com/api/json/v1/1/random.php').then((res)=>{
         console.log(res.data.meals)
         this.foods10 = res.data.meals
+    })
+    
+},
+searchAnotherFood16(){
+     axios.get('https://www.themealdb.com/api/json/v1/1/random.php').then((res)=>{
+        console.log('food16',res.data.meals)
+        this.foods16 = res.data.meals
+    })
+    
+},
+searchAnotherFood17(){
+     axios.get('https://www.themealdb.com/api/json/v1/1/random.php').then((res)=>{
+        console.log(res.data.meals)
+        this.foods17 = res.data.meals
+    })
+    
+},
+searchAnotherFood18(){
+     axios.get('https://www.themealdb.com/api/json/v1/1/random.php').then((res)=>{
+        console.log(res.data.meals)
+        this.foods18 = res.data.meals
+    })
+    
+},
+searchAnotherFood19(){
+     axios.get('https://www.themealdb.com/api/json/v1/1/random.php').then((res)=>{
+        console.log(res.data.meals)
+        this.foods19 = res.data.meals
     })
     
 },
