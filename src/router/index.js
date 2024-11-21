@@ -5,6 +5,8 @@ import Seafood from '../views/Recipe/Seafood.vue'
 import Dessert from '../views/Recipe/Dessert.vue'
 import Vegetarian from '../views/Recipe/Vegetarian.vue'
 import Details from '../views/Recipe/Details.vue'
+import About from '../views/Recipe/About.vue'
+import Contactus from '../views/Recipe/Contactus.vue'
 
 
 
@@ -39,6 +41,17 @@ const routes = [
     name: 'Details',
     component: Details
   },
+  {
+    path: '/About',
+    name: 'About',
+    component: About
+  },
+  {
+    path: '/Contactus',
+    name: 'Contactus',
+    component: Contactus
+  },
+  
   
   
 

@@ -15,19 +15,19 @@
     <div v-if="showList" class="flex-row ml-1 mt-16 text-blue-600 fixed z-10 bg-white font-bold px-1" >
         <div class="mb-3">
 
-<a href="">Home</a>
+<a href="/">Home</a>
         </div>
         <div class="mb-3">
 
-<a href="">About</a>
+<a href="/About">About</a>
         </div>
         <div class="mb-3">
 
-<a href="">Recipes</a>
+<a href="/">Recipes</a>
         </div>
         <div class="mb-3">
 
-<a href="">Contact</a>
+<a href="/Contactus">Contact</a>
         </div>
 </div>
       
@@ -36,22 +36,22 @@
     <div></div>
   </div>
 <div v-if="singleFood">
- <div v-for="food in foodSearch" :key="food " class="mt-20 ml-4">
-                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md">
+ <div v-for="food in foodSearch" :key="food " class="mt-20 ml-4 md:ml-60 md:bg-white md:rounded-md md:shadow-md md:mr-60 md:w-1/2 pb-5">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md  md:h-64 md:w-full">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
-                <button class="bg-green-200 py-1 px-3 rounded-md ml-28 mt-3 font-bold"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
+                <button class="bg-green-200 py-1 px-3 rounded-md ml-28 mt-3 font-bold md:ml-44"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
                 <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
                 </div>
 </div>
 
- <div class="z-0" v-if="!singleFood">
+ <div class="z-0 lg:hidden md:hidden" v-if="!singleFood">
 
   <div class="mt-20">
         <h1 class="text-3xl font-serif text-center text-green-400 ">Let's Start  Cooking <br> <span class="text-black">With  Popular Recipes</span> </h1>
         <p class="text-center mt-3 text-gray-400 font-mono">Want to learn to cook but confused to start? No Need to worry again!</p>
     </div>
     <div >
-        <div class="flex justify-between ml-3 mr-7 mt-7">
+        <div class="flex justify-between ml-3 mr-7 mt-10">
             <div v-for="food in foods" :key="food">
                 <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
@@ -169,7 +169,7 @@
         <h1  class="text-center font-serif font-bold text-xl text-blue-300 mb-5">About The Recipes</h1>
         <p class="ml-3 mr-3 font-serif">Welcome to Recipe Finder, your ultimate destination for discovering delicious recipes tailored to your tastes! Built with Vue.js, our intuitive platform allows you to easily search and filter through a vast collection of recipes from around the world. Whether you’re a novice cook or a seasoned chef, our user-friendly interface helps you find the perfect dish for any occasion. Explore, save your favorites, and get inspired to create culinary masterpieces in your own kitchen. Happy cooking!</p>
     </div>
-    <div>
+    <div class="mt-5">
         <h1 class="text-center font-serif font-bold text-xl text-blue-300 mb-5">Contact Us</h1>
         <div class="flex justify-between ml-3 mb-10">
             <div>
@@ -179,6 +179,147 @@
             <div>
             <i class="fa-solid fa-envelope text-6xl ml-28 text-center mt-5  cursor-pointer text-red-400"></i>
             <a href="mailto:kalkidansol1623@gmail.com" class="text-blue-500 ml-7">kalkidansol1623@gmail.com</a>
+            </div>
+        </div>
+
+       
+
+
+    </div>
+ </div>
+ <div class="invisible md:visible lg:visible ml-5 mr-5" v-if="!singleFood">
+    <div class="mt-36">
+        <h1 class="text-3xl font-serif text-center text-green-400 ">Let's Start  Cooking <br> <span class="text-black">With  Popular Recipes</span> </h1>
+        <p class="text-center mt-3 text-gray-400 font-mono">Want to learn to cook but confused to start? No Need to worry again!</p>
+    </div>
+ <div class="flex justify-between ml-3 mr-7 mt-10">
+            <div v-for="food in foods" :key="food" class="bg-white shadow-md pb-5 rounded-md">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
+                <!-- <h2>{{food.idMeal}}</h2> -->
+                <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
+                <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
+                <!-- <router-link :to="{ name: 'Details', params: { id_Meal: food.idMeal } }" class="bg-green-200 py-1 px-2 rounded-md ml-5 mt-3 font-bold" >Show Details</router-link > -->
+                </div>
+                
+            <div v-for="food in foods2" :key="food" class="mr-5 ml-5 bg-white shadow-md pb-5 rounded-md">
+                <img :src="food.strMealThumb" alt="no image" class="w-96  h-40 rounded-md">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
+                <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
+               
+                <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
+            </div>
+               <div v-for="food in foods3" :key="food" class="bg-white shadow-md pb-5 rounded-md">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
+           <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button> 
+                </div>
+        </div>
+         <div class="flex justify-between ml-3 mr-7 mt-10">
+            <div v-for="food in foods4" :key="food" class="bg-white shadow-md pb-5 rounded-md">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
+                <!-- <h2>{{food.idMeal}}</h2> -->
+                <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
+                <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
+                <!-- <router-link :to="{ name: 'Details', params: { id_Meal: food.idMeal } }" class="bg-green-200 py-1 px-2 rounded-md ml-5 mt-3 font-bold" >Show Details</router-link > -->
+                </div>
+                
+            <div v-for="food in foods5" :key="food" class="mr-5 ml-5 bg-white shadow-md pb-5 rounded-md">
+                <img :src="food.strMealThumb" alt="no image" class="w-96  h-40 rounded-md">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
+                <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
+               
+                <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
+            </div>
+               <div v-for="food in foods6" :key="food" class="bg-white shadow-md pb-5 rounded-md">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
+           <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button> 
+                </div>
+        </div>
+         <div class="flex justify-between ml-3 mr-7 mt-10">
+            <div v-for="food in foods7" :key="food" class="bg-white shadow-md pb-5 rounded-md">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
+                <!-- <h2>{{food.idMeal}}</h2> -->
+                <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
+                <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
+                <!-- <router-link :to="{ name: 'Details', params: { id_Meal: food.idMeal } }" class="bg-green-200 py-1 px-2 rounded-md ml-5 mt-3 font-bold" >Show Details</router-link > -->
+                </div>
+                
+            <div v-for="food in foods8" :key="food" class="mr-5 ml-5 bg-white shadow-md pb-5 rounded-md">
+                <img :src="food.strMealThumb" alt="no image" class="w-96  h-40 rounded-md">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
+                <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
+               
+                <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
+            </div>
+               <div v-for="food in foods9" :key="food" class="bg-white shadow-md pb-5 rounded-md">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
+           <button class="bg-green-200 py-1 px-2 rounded-md ml-20 mt-3 font-bold" @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button> 
+                </div>
+        </div>
+          <div class="mt-16">
+
+    <h1 class="text-center font-serif font-bold text-2xl text-blue-300">Find Recipies  For</h1>
+   
+          <div class="flex justify-between ml-3 mr-7 mt-7">
+            
+                <div @click="searchAnotherFood11('Seafood','Seafood')">
+                <img :src="strMealThumb" alt="no image" class=" w-80 h-80 rounded-full">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">Seafood</h1>
+
+                </div>
+                  <div class="ml-5" @click="searchAnotherFood11('Dessert','Dessert')">
+                <img :src="strMealThumb2" alt="no image" class=" w-80 h-80 rounded-full">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">Dessert</h1>
+
+                </div>
+
+                
+    
+        </div>
+         <div class="flex justify-between ml-3 mr-7 mt-7">
+            
+                <div @click="searchAnotherFood11('Chicken','Chicken')">
+                <img :src="strMealThumb3" alt="no image" class=" w-80 h-80 rounded-full">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">Chicken</h1>
+
+                </div>
+                  <div class="ml-5" @click="searchAnotherFood11('Vegetarian','Vegetarian')">
+                <img :src="strMealThumb4" alt="no image" class=" w-80 h-80 rounded-full">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">Vegetarian</h1>
+
+                </div>
+
+                
+    
+        </div>
+
+   
+    </div>
+        <div class="mt-16">
+        <h1 class="text-center font-serif font-bold text-xl">Search The Foods Here and press the search Icon</h1>
+                <input type="text" placeholder="Enter food name"   class="shadow-md px-7  focus:outline-blue-300 py-3 rounded-md w-96 ml-60 border-blue-400 border-2" v-model="foodName">
+        <!-- <i class="fa-solid fa-magnifying-glass text-3xl mt-10  text-blue-600 ml-2" @click="toggleSearch" v-if="!searchYourFood"></i> -->
+        <i class="fa-solid fa-magnifying-glass text-2xl mt-10 text-blue-600 ml-2"  @click="toggleSingleFood"></i>
+    </div>
+    <div class="mt-16">
+        <h1  class="text-center font-serif font-bold text-xl text-blue-300 mb-5">About The Recipes</h1>
+        <p class="ml-3 mr-3 font-serif">Welcome to Recipe Finder, your ultimate destination for discovering delicious recipes tailored to your tastes! Built with Vue.js, our intuitive platform allows you to easily search and filter through a vast collection of recipes from around the world. Whether you’re a novice cook or a seasoned chef, our user-friendly interface helps you find the perfect dish for any occasion. Explore, save your favorites, and get inspired to create culinary masterpieces in your own kitchen. Happy cooking!</p>
+    </div>
+    <div class="mt-5">
+        <h1 class="text-center font-serif font-bold text-xl text-blue-300 mb-5">Contact Us</h1>
+        <div class="flex justify-between ml-3 mb-10">
+            <div>
+           <i class="fa-solid fa-phone text-6xl text-center mt-5 ml-6 cursor-pointer text-green-300"></i>
+            <a href="tel:+251988283088" class="text-blue-500">+251988283088</a>
+            </div>
+            <div>
+            <i class="fa-solid fa-envelope text-6xl ml-28 text-center mt-5  cursor-pointer text-red-400"></i>
+            <a href="mailto:kalkidansol1623@gmail.com" class="text-blue-500 ml-3 -mt-3">kalkidansol1623@gmail.com</a>
             </div>
         </div>
 

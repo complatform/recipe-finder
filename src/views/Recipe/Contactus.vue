@@ -1,5 +1,5 @@
 <template>
- <div class="flex  ml-5 justify-between mr-5 pb-5 pt-3 pl-7 pr-10 fixed bg-white w-full">
+<div class="flex mt-5 ml-5 justify-between mr-5 pb-5 ">
 
         <i class="fa-solid fa-bars text-3xl" @click="toggleList"></i>
         <h1 class="font-bold text-gray-600 text-3xl" v-if="!searchYourFood">food <span class="font-bold text-green-600">Mood</span></h1>
@@ -9,7 +9,7 @@
         
         </div>
           <hr class="bg-black  ">
-              <div v-if="showList" class="flex-row ml-1 mt-12 text-blue-600 fixed z-10 bg-white font-bold pl-5 pr-5" >
+              <div v-if="showList" class="flex-row ml-1 mt-2 text-blue-600 fixed z-10 bg-white font-bold pl-5 pr-5" >
         <div class="mb-3">
 
 <a href="/">Home</a>
@@ -24,38 +24,40 @@
         </div>
         <div class="mb-3">
 
-<a href="/Contactus">Contact</a>
+<a href="">Contact</a>
         </div>
 </div>
-    <div class=" justify-between ml-3 mr-7 mt-7 md:ml-16 md:mt-20">
-            <div v-for="food in foods11" :key="food">
-                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 rounded-md md:ml-60">
-                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 md:mb-10">{{food.strMeal}}</h1>
-
-                </div>
-          
+  <div class="mt-10">
+        <h1 class="text-center font-serif font-bold text-xl text-blue-300 mb-5">Contact Us</h1>
+        <div class="flex justify-between ml-3 mb-10">
+            <div>
+           <i class="fa-solid fa-phone text-6xl text-center mt-5 ml-6 cursor-pointer text-green-300"></i>
+            <a href="tel:+251988283088" class="text-blue-500">+251988283088</a>
+            </div>
+            <div>
+            <i class="fa-solid fa-envelope text-6xl ml-28 text-center mt-5  cursor-pointer text-red-400"></i>
+            <a href="mailto:kalkidansol1623@gmail.com" class="text-blue-500 ml-7">kalkidansol1623@gmail.com</a>
+            </div>
         </div>
+
        
+
+
+    </div>
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
 data(){
     return{
-foods11:[],
-showList:false,
+        showList:false,
 searchYourFood:false,
 searchYourFood:false,
 singleFood:false,
     }
 },
-mounted(){
-this.searchAnotherFood11()
-},
 methods:{
-        toggleList(){
+         toggleList(){
     this.showList = !this.showList
 },
 toggleSearch(){
@@ -67,21 +69,6 @@ toggleSingleFood(){
         console.log(res.data.meals)
         this.foodSearch = res.data.meals
     })
-},
-    searchAnotherFood11(){  
-  axios.get('https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken')
-    .then((res) => {
-   
-      if (res.data.meals && res.data.meals.length > 0) {
-        this.foods11 = res.data.meals; 
-        console.log('Seafood Meals', this.foods11);
-      } else {
-        console.log('No seafood meals found.');
-      }
-    })
-    .catch((error) => {
-      console.error('Error fetching seafood meals:', error);
-    });
 },
 }
 }

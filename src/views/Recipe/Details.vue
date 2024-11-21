@@ -16,21 +16,21 @@
         </div>
         <div class="mb-3">
 
-<a href="">About</a>
+<a href="/About">About</a>
         </div>
         <div class="mb-3">
 
-<a href="">Recipes</a>
+<a href="/">Recipes</a>
         </div>
         <div class="mb-3">
 
-<a href="">Contact</a>
+<a href="/Contactus">Contact</a>
         </div>
 </div>
-  <div class="mt-20">
-    <img :src="image" alt="" class="w-80 ml-9 mt-3 rounded-sm">
+  <div class="mt-20  md:hidden lg:hidden">
+    <img :src="image" alt="" class="w-80 ml-9 mt-3 rounded-sm ">
     <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{name}}</h1>
-    <h1 class="ml-3 text-blue-400 text-xl underline font-serif">Ingredients</h1>
+    <h1 class="ml-3 text-blue-400 text-xl underline font-serif ">Ingredients</h1>
     <div class="ml-10 mt-2 font-serif">
 <ul class="list-disc">
     <li v-if="ingredient1">
@@ -75,22 +75,70 @@
 
 </ul>
  
-    <!-- <p>{{ingredient2}}</p>
-    <p>{{ingredient3}}</p>
-    <p>{{ingredient4}}</p>
-    <p>{{ingredient5}}</p>
-    <p>{{ingredient6}}</p>
-    <p>{{ingredient7}}</p>
-    <p>{{ingredient8}}</p>
-    <p>{{ingredient9}}</p>
-    <p>{{ingredient10}}</p>
-    <p>{{ingredient11}}</p>
-    <p>{{ingredient12}}</p>
-    <p>{{ingredient13}}</p> -->
+   
     </div>
     <h1 class="ml-3 text-blue-400 text-xl underline font-serif">Instraction</h1>
     <h2 class="ml-3 mr-3 font-serif">{{instraction}}</h2>
     
+  </div>
+  <div class="invisible md:visible lg:visible mt-5 ml-10 mb-10">
+<div class="flex">
+<div>
+<img :src="image" alt="" class="w-80 ml-9 mt-20 rounded-sm ">
+    <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{name}}</h1>
+</div>
+<div>
+    <div class="ml-20 mt-20 font-serif">
+            <h1 class="ml-3 text-blue-400 text-xl underline font-serif md:mt-4">Ingredients</h1>
+<ul class="list-disc">
+    <li v-if="ingredient1">
+   {{ingredient1}}
+    </li>
+      <li v-if="ingredient2">
+   {{ingredient2}}
+    </li>
+       <li v-if="ingredient3">
+   {{ingredient3}}
+    </li>
+        <li v-if="ingredient4">
+   {{ingredient4}}
+    </li>
+            <li v-if="ingredient5">
+   {{ingredient5}}
+    </li>
+            <li v-if="ingredient6">
+   {{ingredient6}}
+    </li>
+            <li v-if="ingredient7">
+   {{ingredient7}}
+    </li>
+            <li v-if="ingredient8">
+   {{ingredient8}}
+    </li>
+            <li v-if="ingredient9">
+   {{ingredient9}}
+    </li>
+            <li v-if="ingredient10">
+   {{ingredient10}}
+    </li>
+            <li v-if="ingredient11">
+   {{ingredient11}}
+    </li>
+            <li v-if="ingredient12">
+   {{ingredient12}}
+    </li>
+            <li v-if="ingredient13">
+   {{ingredient13}}
+    </li>
+
+</ul>
+ 
+   
+    </div>
+</div>
+</div>
+  <h1 class="ml-3 mt-10 text-blue-400 text-xl underline font-serif">Instraction</h1>
+    <h2 class="ml-3 mr-3 font-serif w-6/7">{{instraction}}</h2>
   </div>
 </template>
 
