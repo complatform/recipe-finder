@@ -9,7 +9,7 @@
 </div>
 <div class="ml-20 md:ml-48">
   <i class="fa-solid fa-magnifying-glass text-3xl" @click="toggleSearch" v-if="!searchYourFood"></i>
-  <i class="fa-solid fa-magnifying-glass text-3xl -ml-16" v-if="searchYourFood" @click="toggleSingleFood"></i>
+  <i class="fa-solid fa-magnifying-glass text-3xl -ml-12" v-if="searchYourFood" @click="toggleSingleFood"></i>
 </div> 
 
   
