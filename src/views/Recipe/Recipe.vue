@@ -1,26 +1,27 @@
 <template>
-<div class="flex justify-between items-center fixed top-0 left-0 mr-5 pb-5 pt-3 pl-7 pr-10 shadow-md bg-white w-full z-10">
-    <i class="fa-solid fa-bars text-3xl cursor-pointer" @click="toggleList"></i>
-    
-    <h1 class="font-bold text-gray-600 text-3xl" v-if="!searchYourFood">
-        food <span class="font-bold text-green-600">Mood</span>
-    </h1>
-    
-    <input type="text" 
-           placeholder="Enter food name" 
-           v-if="searchYourFood" 
-           class="shadow-md px-7 focus:outline-blue-300 py-3 rounded-md -mt-1" 
-           v-model="foodName">
-    
-    <div class="flex items-center space-x-2">
-        <i class="fa-solid fa-magnifying-glass text-3xl cursor-pointer" @click="toggleSearch" v-if="!searchYourFood"></i>
-        <i class="fa-solid fa-magnifying-glass text-3xl cursor-pointer" v-if="searchYourFood" @click="toggleSingleFood"></i>
-    </div>
+ <div class="flex fixed lg:justify-between md:justify-between mr-5 pb-5 pt-3 pl-7 pr-10 lg:fixed md:fixed shadow-md bg-white w-full">
+<div>
+<i class="fa-solid fa-bars text-3xl" @click="toggleList"></i>
 </div>
+<div class="ml-24">
+ <h1 class="font-bold text-gray-600 text-3xl" v-if="!searchYourFood">food <span class="font-bold text-green-600">Mood</span></h1>
+</div>
+<div class="ml-20">
+  <i class="fa-solid fa-magnifying-glass text-3xl" @click="toggleSearch" v-if="!searchYourFood"></i>
+</div> 
+<div class="-ml-20">
+  
+        <input type="text" placeholder="Enter food name" v-if="searchYourFood" class="shadow-md px-7  focus:outline-blue-300 py-3 rounded-md -mt-1" v-model="foodName">
+  </div>  
+  <div class="ml-5">
+
+        <i class="fa-solid fa-magnifying-glass text-3xl " v-if="searchYourFood" @click="toggleSingleFood"></i>
+  </div>
+      
+        </div>
           <hr class="bg-black  ">
               <div v-if="showList" class="flex-row ml-1 mt-20 text-blue-600 fixed z-10 bg-white font-bold pl-5 pr-5" >
         <div class="mb-3">
-
 <a href="/">Home</a>
         </div>
         <div class="mb-3">
