@@ -27,7 +27,15 @@
 <a href="/Contactus">Contact</a>
         </div>
 </div>
-    <div class=" justify-between ml-3 mr-7 mt-20 md:ml-16 md:mt-20 lg:ml-72">
+<div v-if="singleFood">
+ <div v-for="food in foodSearch" :key="food " class="mt-20 lg:mt-24 md:mt-24 ml-4 md:ml-60 md:bg-white md:rounded-md md:shadow-md md:mr-60 md:w-1/2 pb-5 lg:ml-80">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md  md:h-64 md:w-full lg:h-96">
+                <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
+                <button class="bg-green-200 py-1 px-3 rounded-md ml-28 mt-3 font-bold md:ml-44 lg:ml-72"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
+                <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
+                </div>
+</div>
+    <div v-if="!singleFood" class=" justify-between ml-3 mr-7 mt-20 md:ml-16 md:mt-20 lg:ml-72">
             <div v-for="food in foods11" :key="food">
                 <img :src="food.strMealThumb" alt="no image" class=" w-96 h-40 lg:h-60 md:h-60 rounded-md md:ml-60">
                 <h1 class="text-center lg:text-left lg:ml-64 mt-3 text-2xl font-serif text-green-300 md:mb-10">{{food.strMeal}}</h1>
