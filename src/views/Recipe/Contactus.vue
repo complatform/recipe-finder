@@ -9,7 +9,7 @@
         
         </div>
           <hr class="bg-black  ">
-              <div v-if="showList" class="flex-row ml-1 mt-20 text-blue-600 fixed z-10 bg-white font-bold pl-5 pr-5" >
+              <div v-if="showList" class="flex-row ml-1 mt-2 text-blue-600 fixed z-10 bg-white font-bold pl-5 pr-5" >
         <div class="mb-3">
 
 <a href="/">Home</a>
