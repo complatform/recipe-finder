@@ -5,18 +5,12 @@
 </div>
 <div class="ml-24 md:ml-60">
  <h1 class="font-bold text-gray-600 text-3xl" v-if="!searchYourFood">food <span class="font-bold text-green-600">Mood</span></h1>
- <input type="text" placeholder="Enter food name" v-if="searchYourFood" class="shadow-md px-7  focus:outline-blue-300 py-3 rounded-md -mt-1 -ml-16" v-model="foodName">
+ <input type="text" placeholder="Enter food name" v-if="searchYourFood" class="shadow-md px-7  focus:outline-blue-300 py-3 rounded-md -mt-1 -ml-10" v-model="foodName">
 </div>
 <div class="ml-20 md:ml-48">
   <i class="fa-solid fa-magnifying-glass text-3xl" @click="toggleSearch" v-if="!searchYourFood"></i>
-  <i class="fa-solid fa-magnifying-glass text-3xl -ml-12" v-if="searchYourFood" @click="toggleSingleFood"></i>
+  <i class="fa-solid fa-magnifying-glass text-3xl -ml-10" v-if="searchYourFood" @click="toggleSingleFood"></i>
 </div> 
-
-  
-        
-
-
-      
         </div>
           <hr class="bg-black  ">
               <div v-if="showList" class="flex-row ml-1 mt-20 text-blue-600 fixed z-10 bg-white font-bold pl-5 pr-5" >
