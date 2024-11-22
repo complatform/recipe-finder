@@ -330,7 +330,7 @@
         <h1 class="text-center font-serif font-bold text-xl">Search The Foods Here and press the search Icon</h1>
         <div class="lg:ml-40">
 
-                <input type="text" placeholder="Enter food name"   class="shadow-md px-7  focus:outline-blue-300 py-3 rounded-md w-96 ml-60 border-blue-400 border-2 lg:ml-96" v-model="foodName">
+                <input type="text" placeholder="Enter food name"   class="shadow-md px-7  focus:outline-blue-300 py-3 rounded-md w-96 ml-60 border-blue-400 border-2  lg:w-1/2" v-model="foodName">
                         <i class="fa-solid fa-magnifying-glass text-2xl mt-10 text-blue-600 ml-2"  @click="toggleSingleFood"></i>
         </div>
         <!-- <i class="fa-solid fa-magnifying-glass text-3xl mt-10  text-blue-600 ml-2" @click="toggleSearch" v-if="!searchYourFood"></i> -->
