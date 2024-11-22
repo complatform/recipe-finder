@@ -9,11 +9,11 @@
 <div class="ml-20">
   <i class="fa-solid fa-magnifying-glass text-3xl" @click="toggleSearch" v-if="!searchYourFood"></i>
 </div> 
-<div class="-ml-20">
+<div class="-ml-28">
   
         <input type="text" placeholder="Enter food name" v-if="searchYourFood" class="shadow-md px-7  focus:outline-blue-300 py-3 rounded-md -mt-1" v-model="foodName">
   </div>  
-  <div class="ml-5">
+  <div class="ml-10">
 
         <i class="fa-solid fa-magnifying-glass text-3xl " v-if="searchYourFood" @click="toggleSingleFood"></i>
   </div>
@@ -40,7 +40,7 @@
       
 <div v-if="singleFood">
  <div @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)" v-for="food in foodSearch" :key="food " class="mt-20 lg:mt-24 md:mt-24 ml-4 md:ml-60 md:bg-white md:rounded-md md:shadow-md md:mr-60 md:w-1/2 pb-5 lg:ml-80">
-                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md  md:h-64 md:w-full lg:h-96">
+                <img :src="food.strMealThumb" alt="no image" class=" w-96 h-60 rounded-md ml-5  md:h-64 md:w-full lg:h-96">
                 <h1 class="text-center mt-3 text-2xl font-serif text-green-300 ">{{food.strMeal}}</h1>
                 <button class="bg-green-200 py-1 px-3 rounded-md ml-28 mt-3 font-bold md:ml-44 lg:ml-72"  @click="showDetails(food.idMeal,food.strCategory,food.strIngredient1,food.strIngredient2,food.strIngredient3,food.strIngredient4,food.strIngredient5,food.strIngredient6,food.strIngredient7,food.strIngredient8,food.strIngredient9,food.strIngredient10,food.strIngredient11,food.strIngredient12,food.strIngredient13,food.strInstructions,food.strMeal,food.strMealThumb)">Show Details</button>
                 <!-- <h1 class="text-center text-xl font-serif text-green-300 ">{{food.strArea}}</h1> -->
